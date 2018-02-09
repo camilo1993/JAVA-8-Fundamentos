@@ -1,6 +1,6 @@
 ## Documentacion 
 * [2018-2017 - Oracle JDK 9 Documentation](https://docs.oracle.com/javase/9/)
-* [2018-2014 - Oracle JDK 8 Documentation](https://docs.oracle.com/javase/8/)
+* [2018-2014 - Oracle JDK 8 Documentation  <-- Certificación 1Z0-808 esta basada en este jdk](https://docs.oracle.com/javase/8/)
 
 
 ## Cursos
