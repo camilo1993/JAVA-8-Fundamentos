@@ -7,6 +7,6 @@
 * [2018-2014 - Pildoras Informaticas - Curso de Java desde cero](https://www.youtube.com/watch?v=coK4jM5wvko&list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk)
 
 ## Certificación
-* [2018-2015 - 1Z0-808 Java SE 8 Programmer I] (https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808)
+* [2018-2015 - 1Z0-808 Java SE 8 Programmer I](https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-808)
 
 
