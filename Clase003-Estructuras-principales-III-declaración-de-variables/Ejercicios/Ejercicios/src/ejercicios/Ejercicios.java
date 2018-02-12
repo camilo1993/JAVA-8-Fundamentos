@@ -21,7 +21,6 @@ public class Ejercicios {
         System.out.println(edad);
         System.out.println(salario);
         System.out.println(carnet);
-               
         
         
     }
