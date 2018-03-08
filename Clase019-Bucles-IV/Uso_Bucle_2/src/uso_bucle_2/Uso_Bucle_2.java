@@ -7,7 +7,9 @@ public class Uso_Bucle_2 {
 
     public static void main(String[] args) {
        
-        Boolean arroba=false;
+        int arroba=0;
+        
+        boolean punto=false;
         
         String mail=JOptionPane.showInputDialog("Introduce mail");
         
@@ -15,11 +17,19 @@ public class Uso_Bucle_2 {
             
             if(mail.charAt(i)=='@'){
                 
-                arroba=true;
+                arroba++;
+                
             }
+        
+            if(mail.charAt(i)=='.'){
+                
+                punto=true;
+            
+        }
         }
         
-        if(arroba==true){
+        
+        if(arroba==1 && punto==true){
             
             System.out.println("Es correcto");
         }
