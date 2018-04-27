@@ -16,7 +16,7 @@ public class Uso_Coche {
         
     Coche Renault=new Coche(); //INSTANCIAR UNA CLASE. EJEMPLAR DE CLASE    
         
-         Renault.ruedas=3
+         
         
     
     
