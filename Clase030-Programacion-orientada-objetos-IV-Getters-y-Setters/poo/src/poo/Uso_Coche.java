@@ -16,9 +16,8 @@ public class Uso_Coche {
         Coche micoche = new Coche();
 
         micoche.establece_color();
-        
+
         System.out.println(micoche.dime_color());
-        
 
 //
 //        Coche Renault = new Coche(); //INSTANCIAR UNA CLASE. EJEMPLAR DE CLASE    
