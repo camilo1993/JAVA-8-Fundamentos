@@ -15,15 +15,17 @@ public class Pruebas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        
         Empleados trabajador1 = new Empleados("Paco ");
-
+        
         Empleados trabajador2 = new Empleados("Ana ");
-
+        
         trabajador1.cambiaSeccion("RRHH");
         
+//        trabajador1.cambiaNombre("Maria");
+        
         System.out.println(trabajador1.devuelveDatos());
-
+        
         System.out.println(trabajador2.devuelveDatos());
 
     }
@@ -46,11 +48,16 @@ class Empleados {
 
     }
 
+//    public void cambiaNombre(String nombre) {
+//       
+//        this.nombre = nombre;
+//    }
+
     public String devuelveDatos() {
         return "El nombre es " + nombre + "y la seccion es " + seccion;
     }
 
-    private String nombre;
+    private final String nombre;
 
     private String seccion;
 
