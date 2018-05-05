@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package empleados;
+
 import java.util.*;
 
 public class Uso_Empleado {
@@ -38,10 +39,8 @@ public class Uso_Empleado {
         misEmpleados[1] = new Empleado("Ana Lopez", 95000, 1995, 06, 02);
 
         misEmpleados[2] = new Empleado("Maria Martin", 105000, 2002, 03, 15);
-        
+
         misEmpleados[3] = new Empleado("Antonio Fernandez");
-        
-        
 
 //for(int i=0;i<3;i++){
 //    
@@ -86,7 +85,7 @@ class Empleado {
     }
 
     public Empleado(String nom) {
-       this(nom, 30000, 2000, 01, 01);
+        this(nom, 30000, 2000, 01, 01);
     }
 
     public String dameNombre() {  //GETTER
@@ -116,4 +115,27 @@ class Empleado {
     private double sueldo;
 
     private Date altaContrato;
+}
+
+class Jefatura extends Empleado {
+
+    public Jefatura(String nom, double sue, int agno, int mes, int dia) {
+
+        super(nom, sue, agno, mes, dia);
+    }
+
+    public void estableceIncentivo(double b) {
+
+        incentivo = b;
+
+    }
+
+    public double dameSueldo() {
+
+        double sueldoJefe = super.dameSueldo();
+        return sueldoJefe + incentivo;
+
+    }
+    private double incentivo;
+
 }
