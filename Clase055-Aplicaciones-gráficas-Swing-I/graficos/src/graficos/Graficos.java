@@ -11,6 +11,7 @@ package graficos;
  */
 
 import javax.swing.*;
+
 public class Graficos {
 
     /**
@@ -18,25 +19,23 @@ public class Graficos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        miMarco marco1=new miMarco();
-        
+
+        miMarco marco1 = new miMarco();
+
         marco1.setVisible(true);
- 
+
         marco1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
     }
-    
+
 }
 
-class miMarco extends JFrame{
-    
-    public miMarco(){
-        
+class miMarco extends JFrame {
+
+    public miMarco() {
+
         setSize(500, 300);
-        
+
     }
-    
-    
-    
+
 }
