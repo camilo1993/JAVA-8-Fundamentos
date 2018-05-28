@@ -5,24 +5,18 @@
  */
 package eventos_raton2;
 
-import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
-import java.awt.event.*;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Kmilo
- */
+import java.awt.event.*;
+
 public class Eventos_Raton2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
-        MarcoRaton mimarco = new MarcoRaton();
+        MarcoRaton miMarco = new MarcoRaton();
 
-        mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        miMarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 
@@ -30,42 +24,44 @@ public class Eventos_Raton2 {
 
 class MarcoRaton extends JFrame {
 
-    public MarcoRaton() {
+    MarcoRaton() {
 
         setVisible(true);
 
-        setBounds(700, 300, 600, 450);
+        setBounds(500, 300, 550, 250);
 
         EventosDeRaton EventoRaton = new EventosDeRaton();
 
-        addMouseListener(EventoRaton);
+        addMouseMotionListener(EventoRaton);
 
     }
 }
 
-class EventosDeRaton extends MouseAdapter {
+class EventosDeRaton implements MouseMotionListener {
 
-//    public void mouseClicked(MouseEvent e) {
-//
-//       System.out.println("Cordenada X: " + e.getX() + " Cordenada Y: " + e.getY());
-//        System.out.println(e.getClickCount());
-//
-//
-//    }
-    public void MousePressed(MouseEvent e) {
-
-        if (e.getModifiersEx() == MouseEvent.BUTTON1_DOWN_MASK) {
-
-            System.out.println("Has pulsado el boton izquierdo");
-        } else if (e.getModifiersEx() == MouseEvent.BUTTON2_DOWN_MASK) {
-
-            System.out.println("Has pulsado la rueda del raton");
-
-        } else if (e.getModifiersEx() == MouseEvent.BUTTON3_DOWN_MASK) {
-
-            System.out.println("Has pulsado el boton derecho");
-
-        }
-
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        System.out.println("Estas arrastrando");
     }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        System.out.println("Estas moviendo");    }
+
+//    public void mousePressed(MouseEvent e) {
+//
+//        if (e.getModifiersEx() == MouseEvent.BUTTON1_DOWN_MASK) {
+//
+//            System.out.println("Has pulsado el botón izquierdo");
+//
+//        } else if (e.getModifiersEx() == MouseEvent.BUTTON2_DOWN_MASK) {
+//
+//            System.out.println("Has pulsado la rueda del ratón");
+//
+//        } else if (e.getModifiersEx() == MouseEvent.BUTTON3_DOWN_MASK) {
+//
+//            System.out.println("Has pulsado el botón derecho");
+//        }
+//    }
+
 }
