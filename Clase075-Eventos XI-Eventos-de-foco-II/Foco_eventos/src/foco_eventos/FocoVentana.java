@@ -3,40 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eventos_foco2;
+package javaapplication10;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import javax.swing.JFrame;
 
-
-/**
- *
- * @author Kmilo
- */
-public class Eventos extends JFrame implements WindowFocusListener {
+public class FocoVentana extends JFrame implements WindowFocusListener {
 
     public static void main(String[] args) {
-        
-        Ventana miv=new Ventana();
-        
+
+        FocoVentana miv = new FocoVentana();
+
         miv.iniciar();
-        
 
     }
 
-    public void iniciar()
-    
-    {
-       
-        
-        marco1 = new Ventana();
+    public void iniciar() {
 
-        marco2 = new Ventana();
+        marco1 = new FocoVentana();
+
+        marco2 = new FocoVentana();
 
         marco1.setVisible(true);
 
-        marco2.setVisible(true);
+        marco1.setVisible(true);
 
         marco1.setBounds(300, 100, 600, 350);
 
@@ -50,33 +41,31 @@ public class Eventos extends JFrame implements WindowFocusListener {
 
         marco2.addWindowFocusListener(this);
 
-
     }
 
     @Override
     public void windowGainedFocus(WindowEvent e) {
-        
-        if(e.getSource()==marco1){
-            
+        if (e.getSource() == marco1) {
+
             marco1.setTitle("Tengo el foco");
-        }else{
+        } else {
             marco2.setTitle("Tengo el foco");
         }
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void windowLostFocus(WindowEvent e) {
-        if(e.getSource()==marco1){
-            
+        if (e.getSource() == marco1) {
+
             marco1.setTitle("");
-        }else{
+        } else {
             marco2.setTitle("");
         }
-        
-        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    Ventana marco1;
 
-        Ventana marco2;
+    FocoVentana marco1;
 
+    FocoVentana marco2;
 }
