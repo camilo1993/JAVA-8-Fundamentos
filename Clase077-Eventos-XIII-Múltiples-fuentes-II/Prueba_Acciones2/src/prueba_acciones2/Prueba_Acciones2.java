@@ -56,13 +56,13 @@ class PanelAccion extends JPanel {
         AccionColor accionAzul = new AccionColor("Azul", new ImageIcon("src/graficos/bola_azul.gif"), Color.BLUE);
         AccionColor accionRojo = new AccionColor("Rojo", new ImageIcon("src/graficos/bola_rojo.gif"), Color.YELLOW);
 
-        JButton botonAmarillo = new JButton("Amarillo");
-        JButton botonAzul = new JButton("Azul");
-        JButton botonRojo = new JButton("Rojo");
-
-        add(botonAmarillo);
-        add(botonAzul);
-        add(botonRojo);
+//        JButton botonAmarillo = new JButton("Amarillo");
+//        JButton botonAzul = new JButton("Azul");
+//        JButton botonRojo = new JButton("Rojo");
+//
+//        add(botonAmarillo);
+//        add(botonAzul);
+//        add(botonRojo);
     }
 
 }
