@@ -60,12 +60,11 @@ class PanelAccion extends JPanel {
 //        
 //        add(botonAmarillo);
         add(new JButton(accionAmarillo));
-        
+
         add(new JButton(accionAzul));
 
         add(new JButton(accionRojo));
 
-        
 //        JButton botonAmarillo = new JButton("Amarillo");
 //        JButton botonAzul = new JButton("Azul");
 //        JButton botonRojo = new JButton("Rojo");
@@ -74,12 +73,12 @@ class PanelAccion extends JPanel {
 //        add(botonAzul);
 //        add(botonRojo);
     }
-    
-   private class AccionColor extends AbstractAction {
 
-    public AccionColor(String nombre, Icon icono, Color color_boton) {
+    private class AccionColor extends AbstractAction {
 
-        putValue(Action.NAME, nombre);
+        public AccionColor(String nombre, Icon icono, Color color_boton) {
+
+            putValue(Action.NAME, nombre);
 
             putValue(Action.SMALL_ICON, icono);
 
@@ -94,8 +93,8 @@ class PanelAccion extends JPanel {
             Color c = (Color) getValue("color_de_fondo");
 
             setBackground(c);
-            
-            System.out.println("Nombre " + getValue(Action.NAME)+ "Descripcion: " + getValue(Action.SHORT_DESCRIPTION));
+
+            System.out.println("Nombre " + getValue(Action.NAME) + " Descripcion: " + getValue(Action.SHORT_DESCRIPTION));
 
         }
 
