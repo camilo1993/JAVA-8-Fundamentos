@@ -1,0 +1,15 @@
+menuprocesador.panelProcesador
+menuprocesador.marcoProcesador
+menuprocesador.MenuProcesador
+menuprocesador.panelProcesador$10
+menuprocesador.panelProcesador$8
+menuprocesador.MenuProcesador_II
+menuprocesador.LaminaProcesador_II
+menuprocesador.panelProcesador$7
+menuprocesador.panelProcesador$9
+menuprocesador.panelProcesador$4
+menuprocesador.panelProcesador$3
+menuprocesador.panelProcesador$6
+menuprocesador.panelProcesador$5
+menuprocesador.panelProcesador$2
+menuprocesador.panelProcesador$1
