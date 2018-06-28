@@ -25,132 +25,107 @@ public class Menu_procesador {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+ public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MarcoProcesador marco1=new MarcoProcesador();
+		marco1.setVisible(true);
+			
+		}
+	}
 
-        MenuProcesador mimarco = new MenuProcesador();
-
-        mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // TODO code application logic here
-    }
-
+class MarcoProcesador extends JFrame{
+	
+	public MarcoProcesador(){
+		
+		setBounds(400,200,550,350);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Mi procesador de texto");
+		add(new LaminaProcesador());
+	}
 }
 
-class MenuProcesador extends JFrame {
+class LaminaProcesador extends JPanel{
+	
+	private JTextPane areaTexto;
+	private JPanel laminaMenu;
+	private JMenuBar barraMenu;
+	private JMenu fuente, estilo, tamagno;
+	private Font letras;
+	
+	public LaminaProcesador(){
+		
+		setLayout(new BorderLayout());
+		laminaMenu = new JPanel();
+		add(laminaMenu, BorderLayout.NORTH);
+		areaTexto= new JTextPane();
+		areaTexto.setFont(new Font("Arial", Font.PLAIN, 20));
+		add(areaTexto, BorderLayout.CENTER);
+		
+		barraMenu = new JMenuBar();
+		laminaMenu.add(barraMenu);
+		
+		fuente = new JMenu("Fuente");
+		estilo = new JMenu("Estilo");
+		tamagno = new JMenu("Tamaño");
+		
+		barraMenu.add(fuente);
+		barraMenu.add(estilo);
+		barraMenu.add(tamagno);
+		
+		configuraMenu("Arial","fuente", 10);
+		configuraMenu("Courier","fuente", 10);
+		configuraMenu("Verdana","fuente", 10);
+		configuraMenu("Negrita","estilo", Font.BOLD);
+		configuraMenu("Cursiva","estilo", Font.ITALIC);
+		configuraMenu("12","tamagno", 12);
+		configuraMenu("16","tamagno", 16);
+		configuraMenu("20","tamagno", 20);
+		configuraMenu("24","tamagno", 24);
+		
+		letras = areaTexto.getFont();
+	}
+	
+	public void configuraMenu(String rotulo, String menu, int val){
+		
+		JMenuItem elem_menu = new JMenuItem(rotulo);
+		if(menu=="fuente"){
+			fuente.add(elem_menu);
+		}else if(menu=="estilo"){
+			estilo.add(elem_menu);
+		}else if(menu=="tamagno"){
+			tamagno.add(elem_menu);
+		}
 
-    public MenuProcesador() {
-
-        setBounds(500, 300, 550, 400);
-
-        LaminaProcesador_II milamina = new LaminaProcesador_II();
-
-        add(milamina);
-
-        setVisible(true);
-
-    }
-}
-
-class LaminaProcesador_II extends JPanel {
-
-    public LaminaProcesador_II() {
-
-        setLayout(new BorderLayout());
-
-        JPanel laminamenu = new JPanel();
-
-        JMenuBar mibarra = new JMenuBar();
-
-        //------------------------------
-        fuente = new JMenu("Fuente");
-
-        estilo = new JMenu("Estilo");
-
-        tamagno = new JMenu("Tamaño");
-
-        configura_menu("Arial", "fuente", "Arial", 9, 10);
-
-        configura_menu("Courier", "fuente", "Courier", 9, 10);
-
-        configura_menu("Verdana", "fuente", "Verdana", 9, 10);
-//---------------------------
-        configura_menu("Negrita", "estilo", "", Font.BOLD, 1);
-
-        configura_menu("Cursiva", "estilo", "", Font.ITALIC, 1);
-
-//-----------------------------------------------------------
-        configura_menu("12", "tamaño", "", 9, 12);
-
-        configura_menu("16", "tamaño", "", 9, 16);
-
-        configura_menu("20", "tamaño", "", 9, 20);
-
-        configura_menu("24", "tamaño", "", 9, 24);
-
-//-----------------------------------------------------------        
-        mibarra.add(fuente);
-
-        mibarra.add(estilo);
-
-        mibarra.add(tamagno);
-
-        laminamenu.add(mibarra);
-
-        add(laminamenu, BorderLayout.NORTH);
-
-        JTextPane miarea = new JTextPane();
-
-        add(miarea, BorderLayout.CENTER);
-    }
-
-    public void configura_menu(String rotulo, String menu, String tipo_letra, int estilos, int tam) {
-
-        JMenuItem elem_menu = new JMenuItem(rotulo);
-
-        if (menu == "fuente") {
-
-            fuente.add(elem_menu);
-        } else if (menu == "estilo") {
-
-            estilo.add(elem_menu);
-        } else if (menu == "tamaño") {
-
-            tamagno.add(elem_menu);
-        }
-        elem_menu.addActionListener(new Gestiona_Eventos(rotulo,tipo_letra,estilos,tam));
-    }
-
-    private class Gestiona_Eventos implements ActionListener {
-
-        String tipo_texto, menu;
-
-        int estilo_letra, tamagno_letra;
-
-        Gestiona_Eventos(String elemento, String texto2, int estilo2, int tam_letra) {
-
-            tipo_texto = texto2;
-
-            estilo_letra = estilo2;
-
-            tamagno_letra = tam_letra;
-
-            menu = elemento;
-
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            miarea.setFont(new Font(tipo_texto, estilo_letra, tamagno_letra));
-
-        }
-
-    }
-
-    JTextPane miarea;
-
-    JMenu fuente, estilo, tamagno;
-
-    Font letras;
-
-}
+		elem_menu.addActionListener(new ActionListener(){
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				if(menu=="fuente"){
+					
+					letras = new Font(rotulo, letras.getStyle(), letras.getSize());
+				}
+				else if (menu=="estilo"){
+					
+						if((letras.getStyle()+val)>Font.BOLD+Font.ITALIC || (letras.getStyle()==val)){
+							
+							letras=letras.deriveFont(letras.getStyle()-val);
+						}else{
+							
+							letras=letras.deriveFont(letras.getStyle()+val);
+						}
+					}
+				 
+				else if (menu=="tamagno"){ 
+					
+					float tam2 = val;
+					letras=letras.deriveFont(tam2);
+				}
+				
+				areaTexto.setFont(letras);
+			}
+		});
+	}
+} 

@@ -1,8 +1,0 @@
-menu_procesador.MenuProcesador_II
-menu_procesador.LaminaProcesador_II
-menu_procesador.LaminaProcesador$1
-menu_procesador.Menu_procesador
-menu_procesador.MarcoProcesador
-menu_procesador.MenuProcesador
-menu_procesador.LaminaProcesador
-menu_procesador.LaminaProcesador_II$Gestiona_Eventos
