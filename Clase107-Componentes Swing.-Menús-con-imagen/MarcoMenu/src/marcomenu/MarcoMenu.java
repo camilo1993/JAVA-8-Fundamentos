@@ -71,7 +71,7 @@ class MenuLamina extends JPanel {
 
         JMenuItem copiar = new JMenuItem("Copiar",new ImageIcon("src/graficos/copiar.gif"));
         
-        copiar.setHorizontalTextPosition(SwingConstants.LEFT);
+//        copiar.setHorizontalTextPosition(SwingConstants.LEFT); cambiar icono de posicion
 
         JMenuItem pegar = new JMenuItem("Pegar",new ImageIcon("src/graficos/pegar.gif"));
 
