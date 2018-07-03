@@ -20,10 +20,10 @@ import javax.swing.JTextArea;
  *
  * @author Kmilo
  */
-public class MenuProcesador {
+public class Procesador_II {
 
     /**
-     * @param the command line arguments
+     * @param 
      */
  public static void main(String[] args) {
 
