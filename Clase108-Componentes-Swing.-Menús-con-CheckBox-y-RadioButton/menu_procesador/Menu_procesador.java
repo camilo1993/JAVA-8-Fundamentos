@@ -9,17 +9,13 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextPane;
-import javax.swing.text.StyledEditorKit;
 
 /**
  *
@@ -61,31 +57,21 @@ class LaminaProcesador extends JPanel {
     public LaminaProcesador() {
 
         setLayout(new BorderLayout());
-        
         laminaMenu = new JPanel();
-
         add(laminaMenu, BorderLayout.NORTH);
-
         areaTexto = new JTextPane();
-
         areaTexto.setFont(new Font("Arial", Font.PLAIN, 20));
-
         add(areaTexto, BorderLayout.CENTER);
 
         barraMenu = new JMenuBar();
-
         laminaMenu.add(barraMenu);
 
         fuente = new JMenu("Fuente");
-
         estilo = new JMenu("Estilo");
-
         tamagno = new JMenu("Tamaño");
 
         barraMenu.add(fuente);
-        
         barraMenu.add(estilo);
-        
         barraMenu.add(tamagno);
 
         configuraMenu("Arial", "fuente", 10, "");
@@ -94,62 +80,14 @@ class LaminaProcesador extends JPanel {
         
         //--------------
       
-//        configuraMenu("Negrita", "estilo", Font.BOLD,"src/graficos/fuente.png");
-//        configuraMenu("Cursiva", "estilo", Font.ITALIC,"src/graficos/fuente.png");
-        JCheckBoxMenuItem negrita = new JCheckBoxMenuItem("Negrita", new ImageIcon("src/graficos/fuente.png"));
-
-        JCheckBoxMenuItem cursiva = new JCheckBoxMenuItem("Cursiva", new ImageIcon("src/graficos/fuente.png"));
-
-        negrita.addActionListener(new StyledEditorKit.BoldAction());
+        configuraMenu("Negrita", "estilo", Font.BOLD,"src/graficos/fuente.png");
+        configuraMenu("Cursiva", "estilo", Font.ITALIC,"src/graficos/fuente.png");
         
-        cursiva.addActionListener(new StyledEditorKit.ItalicAction());
-        
-        
-        estilo.add(negrita);
-
-        estilo.add(cursiva);
-
-
-
         //-----------------
-//        configuraMenu("12", "tamagno", 12,"");
-//        configuraMenu("16", "tamagno", 16,"");
-//        configuraMenu("20", "tamagno", 20,"");
-//        configuraMenu("24", "tamagno", 24,"");
-        ButtonGroup tamagno_letra = new ButtonGroup();
-
-        JRadioButtonMenuItem doce = new JRadioButtonMenuItem("12");
-
-        JRadioButtonMenuItem dieciseis = new JRadioButtonMenuItem("16");
-
-        JRadioButtonMenuItem veinte = new JRadioButtonMenuItem("20");
-
-        JRadioButtonMenuItem veinticuatro = new JRadioButtonMenuItem("24");
-
-        tamagno_letra.add(doce);
-
-        tamagno_letra.add(dieciseis);
-
-        tamagno_letra.add(veinte);
-
-        tamagno_letra.add(veinticuatro);
-
-        doce.addActionListener(new StyledEditorKit.FontSizeAction("cambia_tamaño", 12));
-
-        dieciseis.addActionListener(new StyledEditorKit.FontSizeAction("cambia_tamaño", 16));
-
-        veinte.addActionListener(new StyledEditorKit.FontSizeAction("cambia_tamaño", 20));
-
-        veinticuatro.addActionListener(new StyledEditorKit.FontSizeAction("cambia_tamaño", 24));
-        
-        tamagno.add(doce);
-        
-        tamagno.add(dieciseis);
-        
-        tamagno.add(veinte);
-        
-        tamagno.add(veinticuatro);
-
+        configuraMenu("12", "tamagno", 12,"");
+        configuraMenu("16", "tamagno", 16,"");
+        configuraMenu("20", "tamagno", 20,"");
+        configuraMenu("24", "tamagno", 24,"");
 
         letras = areaTexto.getFont();
     }
@@ -174,8 +112,16 @@ class LaminaProcesador extends JPanel {
                 if (menu == "fuente") {
 
                     letras = new Font(rotulo, letras.getStyle(), letras.getSize());
-                }
-                 else if (menu == "tamagno") {
+                } else if (menu == "estilo") {
+
+                    if ((letras.getStyle() + val) > Font.BOLD + Font.ITALIC || (letras.getStyle() == val)) {
+
+                        letras = letras.deriveFont(letras.getStyle() - val);
+                    } else {
+
+                        letras = letras.deriveFont(letras.getStyle() + val);
+                    }
+                } else if (menu == "tamagno") {
 
                     float tam2 = val;
                     letras = letras.deriveFont(tam2);
