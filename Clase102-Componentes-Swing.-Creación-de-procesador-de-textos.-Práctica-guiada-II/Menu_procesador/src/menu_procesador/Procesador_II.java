@@ -6,7 +6,7 @@
 package menu_procesador;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -16,11 +16,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+
 /**
  *
  * @author Kmilo
  */
-public class Menu_procesador {
+public class Procesador_II {
 
     /**
      * @param args the command line arguments
@@ -73,9 +74,10 @@ class LaminaProcesador_II extends JPanel {
 
         arial.addActionListener(new ActionListener() {
 
+            @Override
             public void actionPerformed(ActionEvent e) {
 
-                miarea.setFont(new Font("Arial", Font.PLAIN, 12));
+                miarea.setFont(new Font("Arial", Font.PLAIN, 14));
 
             }
 
@@ -85,10 +87,10 @@ class LaminaProcesador_II extends JPanel {
 
         courier.addActionListener(new ActionListener() {
 
+            @Override
             public void actionPerformed(ActionEvent e) {
 
-                miarea.setFont(new Font("Courier", Font.PLAIN, 12));
-
+            miarea.setFont(new Font("Courier",Font.PLAIN,20));
             }
 
         });
@@ -97,9 +99,10 @@ class LaminaProcesador_II extends JPanel {
 
         verdana.addActionListener(new ActionListener() {
 
+            @Override
             public void actionPerformed(ActionEvent e) {
 
-                miarea.setFont(new Font("Verdana", Font.PLAIN, 12));
+                miarea.setFont(new Font("Verdana", Font.PLAIN , 14 ));
 
             }
 
@@ -138,7 +141,6 @@ class LaminaProcesador_II extends JPanel {
         tamagno.add(tam_24);
 
 //-----------------------------------------------------------        
-        mibarra.add(fuente);
 
         mibarra.add(fuente);
 
@@ -156,6 +158,6 @@ class LaminaProcesador_II extends JPanel {
 
     }
 
-    JTextPane miarea;
-
+    
+JTextPane miarea;
 }
