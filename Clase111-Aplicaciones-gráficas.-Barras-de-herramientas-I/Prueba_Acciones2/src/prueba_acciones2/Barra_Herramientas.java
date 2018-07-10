@@ -3,23 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package barra_herramientas;
+package prueba_acciones2;
 
-import java.awt.Color;
+import java.awt.*;
+import java.awt.Event.*;
 import java.awt.event.ActionEvent;
+
 import javax.swing.*;
-import javax.swing.JPanel;
 
 
-
-
-
-/**
- * 
- * 
- *
- * @author Kmilo
- */
 public class Barra_Herramientas {
 
 	public static void main(String[] args) {
@@ -53,11 +45,45 @@ class Marco_Barra extends JFrame{
 		
 		Action accionAmarillo=new AccionColor("Amarillo", new ImageIcon("src/graficos/bola_amarilla.gif"), Color.YELLOW);
 		
-		Action accionRojo=new AccionColor("Rojo", new ImageIcon("src/graficos/bola_roja.gif"), Color.RED);
+		Action accionRojo=new AccionColor("Rojo", new ImageIcon("src/graficos/bola_rojo.gif"), Color.RED);
+                
+                Action accionSalir=new AbstractAction("salir", new ImageIcon("src/graficos/salir.gif")) {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        
+                      System.exit(0);  
+                    }
+                };
 		
+		JMenu menu=new JMenu ("Color");
+                
+                menu.add(accionAzul);
 		
-		
-		
+		menu.add(accionAmarillo);
+                
+                menu.add(accionRojo);
+                
+                JMenuBar barra_menus=new JMenuBar();
+                
+                barra_menus.add(menu);
+                
+                setJMenuBar(barra_menus);
+                
+                //Construccion de la barra de herramientas
+                
+                JToolBar barra=new JToolBar();
+                
+                barra.add(accionAzul);
+                
+                barra.add(accionAmarillo);
+                
+                barra.add(accionRojo);
+                
+                barra.addSeparator();
+                
+                barra.add(accionSalir);
+                
+                add(barra, BorderLayout.NORTH);
 		
 	}
 		
@@ -84,12 +110,8 @@ class Marco_Barra extends JFrame{
 			lamina.setBackground(c);
 			
 		}		
-
-        
 		
 	}
 	private JPanel lamina;
 }
-
-
 
