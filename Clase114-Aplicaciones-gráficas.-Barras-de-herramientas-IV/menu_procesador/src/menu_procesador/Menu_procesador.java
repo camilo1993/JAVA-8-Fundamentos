@@ -175,52 +175,7 @@ class LaminaProcesador extends JPanel {
         letras = areaTexto.getFont();
 
         //-----------------------------------------------------------
-//        JToolBar barra = new JToolBar();
 //
-//
-//        JButton azulBarra = new JButton(new ImageIcon("src/graficos/azul.png"));
-//
-//        JButton rojoBarra = new JButton(new ImageIcon("src/graficos/rojo.png"));
-//
-//        JButton amarilloBarra = new JButton(new ImageIcon("src/graficos/amarillo.png"));
-//
-//        JButton alinear_derechaBarra = new JButton(new ImageIcon("src/graficos/alinear_derecha.png"));
-//
-//        JButton alinear_izquierdaBarra = new JButton(new ImageIcon("src/graficos/alinear_izquierda.png"));
-//
-//        JButton alinear_centroBarra = new JButton(new ImageIcon("src/graficos/alinear_centro.png"));
-//
-//        JButton justificarBarra = new JButton(new ImageIcon("src/graficos/justificado.png"));
-//
-//        azulBarra.addActionListener(new StyledEditorKit.ForegroundAction("azul", Color.blue));
-//
-//        rojoBarra.addActionListener(new StyledEditorKit.ForegroundAction("rojo", Color.red));
-//
-//        amarilloBarra.addActionListener(new StyledEditorKit.ForegroundAction("amarillo", Color.yellow));
-//
-//        alinear_izquierdaBarra.addActionListener(new StyledEditorKit.AlignmentAction("izquierda", 0));
-//
-//        alinear_centroBarra.addActionListener(new StyledEditorKit.AlignmentAction("centro", 1));
-//
-//        alinear_derechaBarra.addActionListener(new StyledEditorKit.AlignmentAction("derecha", 2));
-//
-//        justificarBarra.addActionListener(new StyledEditorKit.AlignmentAction("justificar", 3));
-//
-//      
-//
-//        barra.add(azulBarra);
-//
-//        barra.add(rojoBarra);
-//
-//        barra.add(amarilloBarra);
-//
-//        barra.add(alinear_derechaBarra);
-//
-//        barra.add(alinear_izquierdaBarra);
-//
-//        barra.add(alinear_centroBarra);
-//
-//        barra.add(justificarBarra);
         barra = new JToolBar();
 
         configura_barra("src/graficos/negrita.png").addActionListener(new StyledEditorKit.BoldAction());
