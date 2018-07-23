@@ -76,49 +76,36 @@ public class Marco_Dialogos extends JFrame {
 
     }
 
-    
     //------------------------------PROPORCIONA MENSAJE---------------------------------
-    
-    
-        public Object   dameMensaje(){
-        
-        String s= lamina_mensajes.dameSeleccion();
-        
-        if(s.equals("Cadena")){
-            
+    public Object dameMensaje() {
+
+        String s = lamina_mensajes.dameSeleccion();
+
+        if (s.equals("Cadena")) {
+
             return cadenaMensaje;
-            
-        }else if(s.equals("Icono")){
-            
-            
+
+        } else if (s.equals("Icono")) {
+
             return iconoMensaje;
-        }else if(s.equals("Componente")){
-            
-            
-            
+        } else if (s.equals("Componente")) {
+
             return componenteMensaje;
-            
-        }else if(s.equals("Otros")){
-            
-            
+
+        } else if (s.equals("Otros")) {
+
             return objetoMensaje;
-            
-        }else if(s.equals("Object[]")){
-            
-            
-            return new Object[]{cadenaMensaje,iconoMensaje,componenteMensaje,objetoMensaje};
-            
-            
+
+        } else if (s.equals("Object[]")) {
+
+            return new Object[]{cadenaMensaje, iconoMensaje, componenteMensaje, objetoMensaje};
+
         }
         return null;
-        
-        
-        
+
     }
-    
-    
+
     //--------------------------------------------------------
-    
     private class AccionMostrar implements ActionListener {
 
         @Override
@@ -158,22 +145,19 @@ public class Marco_Dialogos extends JFrame {
 
 }
 
+class Lamina_Ejemplo extends JPanel {
 
-class Lamina_Ejemplo extends JPanel{
-    
-    
-    public void paintComponent(Graphics g ){
-        
-        
+    public void paintComponent(Graphics g) {
+
         super.paintComponents(g);
-        
-        Graphics2D g2=(Graphics2D)g;
-        
-        Rectangle2D rectangulo=new Rectangle2D.Double(0,0,getWidth(),getHeight());
-        
+
+        Graphics2D g2 = (Graphics2D) g;
+
+        Rectangle2D rectangulo = new Rectangle2D.Double(0, 0, getWidth(), getHeight());
+
         g2.setPaint(Color.YELLOW);
-        
+
         g2.fill(rectangulo);
-        
+
     }
 }

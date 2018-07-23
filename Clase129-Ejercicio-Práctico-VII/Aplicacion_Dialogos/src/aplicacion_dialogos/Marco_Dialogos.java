@@ -37,7 +37,7 @@ public class Marco_Dialogos extends JFrame {
 
         lamina_tipo = new Lamina_Botones("Tipo", primero);
 
-        lamina_tipo_mensajes = new Lamina_Botones("Tipo de Mensajes", new String[]{"ERROR_MESSAGE", "INFORMATION_MESSAGE", "QUESTION_MESSAGE", "PLAIN_MESSAGE"});
+        lamina_tipo_mensajes = new Lamina_Botones("Tipo de Mensajes", new String[]{"ERROR_MESSAGE", "INFORMATION_MESSAGE", "WARNING_MESSAGE", "QUESTION_MESSAGE", "PLAIN_MESSAGE"});
 
         lamina_mensajes = new Lamina_Botones("Mensaje", new String[]{"Cadena", "Icono", "Componente", "Otros", "Object[]"});
 
@@ -76,49 +76,64 @@ public class Marco_Dialogos extends JFrame {
 
     }
 
-    
     //------------------------------PROPORCIONA MENSAJE---------------------------------
-    
-    
-        public Object   dameMensaje(){
-        
-        String s= lamina_mensajes.dameSeleccion();
-        
-        if(s.equals("Cadena")){
-            
+    public Object dameMensaje() {
+
+        String s = lamina_mensajes.dameSeleccion();
+
+        if (s.equals("Cadena")) {
+
             return cadenaMensaje;
-            
-        }else if(s.equals("Icono")){
-            
-            
+
+        } else if (s.equals("Icono")) {
+
             return iconoMensaje;
-        }else if(s.equals("Componente")){
-            
-            
-            
+        } else if (s.equals("Componente")) {
+
             return componenteMensaje;
-            
-        }else if(s.equals("Otros")){
-            
-            
+
+        } else if (s.equals("Otros")) {
+
             return objetoMensaje;
-            
-        }else if(s.equals("Object[]")){
-            
-            
-            return new Object[]{cadenaMensaje,iconoMensaje,componenteMensaje,objetoMensaje};
-            
-            
+
+        } else if (s.equals("Object[]")) {
+
+            return new Object[]{cadenaMensaje, iconoMensaje, componenteMensaje, objetoMensaje};
+
         }
         return null;
-        
-        
-        
+
     }
-    
-    
+    //---------------------devuelve tipo icono
+
+    public int dameIcono() {
+
+        String s = lamina_tipo_mensajes.dameSeleccion();
+
+        if (s.equals("ERROR_MESSAGE")) {
+
+            return 0;
+
+        } else if (s.equals("INFORMATION_MESSAGE")) {
+
+            return 1;
+
+        } else if (s.equals("WARNING_MESSAGE")) {
+
+            return 2;
+
+        } else if (s.equals("QUESTION_MESSAGE")) {
+
+            return 3;
+        } else if (s.equals("PLAIN_MESSAGE")) {
+
+            return -1;
+        }
+        return 0;
+
+    }
+
     //--------------------------------------------------------
-    
     private class AccionMostrar implements ActionListener {
 
         @Override
@@ -127,19 +142,19 @@ public class Marco_Dialogos extends JFrame {
 //            System.out.println(lamina_tipo.dameSeleccion());
             if (lamina_tipo.dameSeleccion().equals("Mensaje")) {
 
-                JOptionPane.showMessageDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0);
+                JOptionPane.showMessageDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", dameIcono());
 
             } else if (lamina_tipo.dameSeleccion().equals("Confirmar")) {
 
-                JOptionPane.showConfirmDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, 0);
+                JOptionPane.showConfirmDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, dameIcono());
 
             } else if (lamina_tipo.dameSeleccion().equals("Entrada")) {
 
-                JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0);
+                JOptionPane.showInputDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", dameIcono());
 
             } else if (lamina_tipo.dameSeleccion().equals("Opcion")) {
 
-                JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, 0, null, null, null);
+                JOptionPane.showOptionDialog(Marco_Dialogos.this, dameMensaje(), "Titulo", 0, dameIcono(), null, null, null);
             }
 
         }
@@ -158,22 +173,19 @@ public class Marco_Dialogos extends JFrame {
 
 }
 
+class Lamina_Ejemplo extends JPanel {
 
-class Lamina_Ejemplo extends JPanel{
-    
-    
-    public void paintComponent(Graphics g ){
-        
-        
+    public void paintComponent(Graphics g) {
+
         super.paintComponents(g);
-        
-        Graphics2D g2=(Graphics2D)g;
-        
-        Rectangle2D rectangulo=new Rectangle2D.Double(0,0,getWidth(),getHeight());
-        
+
+        Graphics2D g2 = (Graphics2D) g;
+
+        Rectangle2D rectangulo = new Rectangle2D.Double(0, 0, getWidth(), getHeight());
+
         g2.setPaint(Color.YELLOW);
-        
+
         g2.fill(rectangulo);
-        
+
     }
 }
