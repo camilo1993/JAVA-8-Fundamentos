@@ -38,7 +38,7 @@ public class Fallos {
 
         int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduce tu edad"));
 
-        System.out.println("Hola" + nombre + "Tienes" + edad + "años" + "El programa termino su ejecucion");
+        System.out.println("Hola " + nombre + " Tienes " + edad + " años " + " El programa termino su ejecucion");
 
     }
 
