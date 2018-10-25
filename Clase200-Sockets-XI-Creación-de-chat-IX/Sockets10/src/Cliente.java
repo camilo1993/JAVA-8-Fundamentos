@@ -147,6 +147,8 @@ class LaminaMarcoCliente extends JPanel implements Runnable {
                     
                     IpsMenu = paqueteRecibido.getIps();
                     
+                    ip.removeAllItems();
+                    
                     for (String z : IpsMenu) {
                         
                         ip.addItem(z);
