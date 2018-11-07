@@ -69,6 +69,42 @@ class Marco_Aplicacion extends JFrame {
 
         add(botonConsulta, BorderLayout.SOUTH);
 
+        //----CONEXIÓN CON BBDD----//
+        try {
+
+            Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3308/pruebas", "root", "");
+
+            Statement sentencia = miConexion.createStatement();
+
+            //--CARGA JCOMBOBOX 
+            String consulta = "SELECT DISTINCTROW SECCIÓN FROM PRODUCTOS";
+
+            ResultSet rs = sentencia.executeQuery(consulta);
+
+            while (rs.next()) {
+
+                secciones.addItem(rs.getString(1));
+            }
+
+            rs.close();
+
+            //---CARGA JCOMBOBOX PAISES---//
+            
+            consulta = "SELECT DISTINCTROW PAÍSDEORIGEN FROM PRODUCTOS";
+
+            rs = sentencia.executeQuery(consulta);
+
+            while (rs.next()) {
+
+                paises.addItem(rs.getString(1));
+            }
+
+            rs.close();
+
+        } catch (Exception e) {
+
+        }
+
     }
 
     private JComboBox secciones;
