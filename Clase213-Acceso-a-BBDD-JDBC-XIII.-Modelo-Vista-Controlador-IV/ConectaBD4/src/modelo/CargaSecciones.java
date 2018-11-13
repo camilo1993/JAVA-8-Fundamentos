@@ -7,8 +7,6 @@ package modelo;
 
 import java.sql.*;
 
-import controlador.*;
-
 /**
  *
  * @author Kmilo
@@ -32,15 +30,10 @@ public class CargaSecciones {
 
             rs = secciones.executeQuery("SELECT DISTINCTROW SECCIÓN FROM PRODUCTOS");
 
-            while (rs.next()) {
+            miProducto = new Productos();
 
-                miProducto = new Productos();
+            miProducto.setSeccion(rs.getString(1));
 
-                miProducto.setSeccion(rs.getString(1));
-
-                return miProducto.getSeccion();
-
-            }
             rs.close();
         } catch (Exception e) {
 
