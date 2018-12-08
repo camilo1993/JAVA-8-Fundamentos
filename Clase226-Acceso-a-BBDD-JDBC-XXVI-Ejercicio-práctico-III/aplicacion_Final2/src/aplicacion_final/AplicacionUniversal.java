@@ -145,11 +145,11 @@ class LaminaBBDD extends JPanel {
     public void mostrarInfoTabla(String tabla) {
         
         ArrayList<String> campos = new ArrayList<String>();
-        
-        String consulta = "SELECT * FROM " + tabla;
-        
+
+        String consulta = "SELECT * FROM pruebas ";
+
         try {
-            
+
             areaInformacion.setText("");
             
             Statement miStatement = miConexion.createStatement();
