@@ -1,0 +1,2 @@
+jdbc:mysql://localhost:3308/pruebas
+root
